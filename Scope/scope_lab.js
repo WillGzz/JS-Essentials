@@ -6,7 +6,8 @@ const globalConst = "I'm a global constant";
 
 {
 // Block scope
-var blockVar = "I'm a block-scoped var";
+var blockVar = "I'm a block-scoped var"; // var is not block scope, it is only function and global scope,
+// so var can be accesed outside a block of code like loop or conditional
 let blockLet = "I'm a block-scoped let";
 const blockConst = "I'm a block-scoped const";
 }
@@ -17,9 +18,9 @@ console.log(globalLet); // Output: "I'm also global, but scoped with let"
 console.log(globalConst); // Output: "I'm a global constant"
 
 //Block Scope
-//console.log(blockVar);
-//console.log(blockLet);
-//console.log(blockConst)
+console.log(blockVar);
+console.log(blockLet);
+console.log(blockConst)
 
 function show(){
     var functionVar = "I'm a block-scoped var";

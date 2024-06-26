@@ -47,3 +47,35 @@ switch(userType){
 }
 
 console.log("User Category:", userCategory);
+
+let isAuthenticated = true;
+let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
+/*
+If isAuthenticated is true, the expression before : (in this case, "Authenticated") is assigned to authenticationStatus.
+If isAuthenticated is false, the expression after : (in this case, "Not authenticated") is assigned to authenticationStatus.
+
+*/
+console.log("Authentication Status:", authenticationStatus);
+
+/*Practice task */
+let orgRole = "Employee"
+let Acess;
+
+if (orgRole === "Employee"){
+    Acess = "Dietary Services";
+}
+else if (orgRole === "Enrolled Member"){
+    Acess = "Dietary Services and one-on-one interaction with a dietician.";
+
+}
+else if (orgRole === "Subscriber"){
+    Acess = "Partial access for Dietary Services";
+
+}
+else {
+    Acess = " enroll or at least subscribe first to avail this facility";
+
+}
+
+
+console.log("Service:", Acess)

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Without addeventlistner method you use the attributes -->
+    <button id="myButton" onclick="handleButtonClick()">Click me</button>
+    <div id="moveArea" style="width: 200px; height: 200px; background-color: lightcoral;"></div>
+     <input type="text" id="keyInput">
+     <input type="text" id="pressInput">
+    <form id="myForm">
+  <input type="text" id="textInput">
+  <input type="submit" value="Submit">
+</form>
+<div style="height: 2000px; background-color: lightblue;">
+  Scroll down
+</div>
+   <!-- <input type="text" id="textInput" placeholder="Click here"> -->
+   <input type="text" id="textInput" placeholder="Click here">
+    <script>
+        
+        function handleButtonClick() {
+            console.log('Button clicked!');
+  }
+
+  // with Addeventlistener
+
+    // Get the button element
+    const button = document.getElementById('myButton');
+
+
+  // Add event listener for 'click' event
+   button.addEventListener('click', handleButtonClick);
+
+
+  // Function to handle button click
+  function handleButtonClick() {
+    console.log('Button clicked!');
+}
+
+ const moveArea = document.getElementById('moveArea');
+  moveArea.addEventListener('mousemove', function(event) {
+    console.log(`Mouse coordinates - X: ${event.clientX}, Y: ${event.clientY}`);
+  });
+
+
+  const keyInput = document.getElementById('keyInput');
+  keyInput.addEventListener('keydown', function() {
+    console.log('Key pressed down!'); });
+
+  keyInput.addEventListener('keyup', function() {
+    console.log('Key released!'); });
+
+
+///The keypress event in JavaScript occurs when a key on the keyboard is pressed down 
+//and produces a character value. It specifically represents pressing a key that results in a character input.
+const pressInput = document.getElementById('pressInput');
+  pressInput.addEventListener('keypress', function() {
+    console.log('Key pressed!');
+});
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the default form submission behavior which involves the page being refreshed and data being sent to default URL
+    console.log('Form submitted!');
+  });
+  //This event enables developers to handle form data, perform validation, or prevent default submission behavior.
+
+  const textInput = document.getElementById('textInput');
+  textInput.addEventListener('focus', function() {
+    console.log('Input focused');
+  });
+  textInput.addEventListener('blur', function() {
+    console.log('Input blurred');
+  });
+  // blur id used to keep track of when an input field or other interactive element is being used and then loses focus.
+
+// Window events in JavaScript handle browser windows or document changes, triggering actions for developers to capture and respond to specific states or behaviors.
+
+  window.addEventListener('load', function() {
+    console.log('Page and all resources loaded');
+  });//Used when the entire document and its dependent resources (like images and stylesheets) finish loading, indicating that the page is ready.
+
+  window.addEventListener('resize', function() {//When the browser window resizes, triggers a function logging 'Window resized' to the console.
+
+    console.log('Window resized');
+  });
+
+  window.addEventListener('scroll', function() {
+    console.log('Document scrolled');// it is used for the detection of scrolling actions within the document.
+  });
+</script>
+</body>
+</html>
